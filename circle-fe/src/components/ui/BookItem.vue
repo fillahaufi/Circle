@@ -1,9 +1,28 @@
 <template>
-  <Card>
+  <Card
+    :pt="{
+      root: () => ({
+        style: {
+          cursor: 'pointer'
+        },
+        onClick: handleSelect
+      }),
+      body: () => ({
+        style: {
+          height: '-webkit-fill-available'
+        }
+      }),
+      footer: () => ({
+        style: {
+          'margin-top': 'auto'
+        }
+      })
+    }"
+  >
     <template #header>
       <div class="relative">
-        <img alt="header" src="https://placehold.co/1200x1200" />
-        <Button
+        <img alt="header" src="https://placehold.co/1000x1200" />
+        <!-- <Button
           icon="pi pi-bookmark"
           severity="secondary"
           text
@@ -11,21 +30,17 @@
           rounded
           aria-label="Bookmark"
           class="!absolute right-2 top-2 !bg-primary-950"
-        />
+        /> -->
       </div>
     </template>
     <template #title>{{ props.book.title }}</template>
     <template #subtitle>{{ props.book.author }}</template>
     <template #content>
-      <!-- <p class="m-0">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error
-        repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa
-        ratione quam perferendis esse, cupiditate neque quas!
-      </p> -->
+      <p>${{ props.book.price }}</p>
     </template>
     <template #footer>
-      <div class="mt-1 flex gap-4">
-        <Button label="+ Add To Cart" class="w-full" />
+      <div class="mt-auto flex gap-4">
+        <Button label="+ Add To Cart" class="mt-auto w-full" />
       </div>
     </template>
   </Card>
@@ -34,11 +49,18 @@
 <script setup lang="ts">
 import Card from 'primevue/card'
 import Button from 'primevue/button'
-
+import { useRouter } from 'vue-router'
 // define props here
 const props = defineProps<{
   book: Book
 }>()
+
+const router = useRouter()
+
+const handleSelect = () => {
+  // go to /books/:id
+  router.push(`/books/${props.book.id}`)
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>

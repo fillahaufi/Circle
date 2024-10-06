@@ -2,7 +2,7 @@
   <div class="min-h-screen py-10">
     <div class="flex flex-col justify-center">
       <h4 class="text-center text-2xl font-bold">Search</h4>
-      <div class="mt-3 w-1/3 self-center">
+      <div class="mt-3 w-full self-center lg:w-1/3">
         <InputGroup>
           <InputText placeholder="Keyword" />
           <Button icon="pi pi-search" />
@@ -11,7 +11,7 @@
     </div>
     <!-- <h4 class="text-2xl font-bold">Bestsellers</h4>
     <div class=""></div> -->
-    <div class="mt-10 grid grid-cols-5 gap-3">
+    <div class="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-8 xl:grid-cols-5">
       <BookItem v-for="book in books" :key="book.id" :book="book" />
     </div>
   </div>

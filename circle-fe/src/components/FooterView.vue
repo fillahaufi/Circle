@@ -11,7 +11,13 @@
           </p>
         </div>
         <div class="flex flex-row gap-3">
-          <Button label="FAQ" outlined="" icon="pi pi-question" icon-pos="right"></Button>
+          <Button
+            label="FAQ"
+            outlined=""
+            class="!bg-primary-100"
+            icon="pi pi-question"
+            icon-pos="right"
+          ></Button>
           <Button label="Contact Us" icon="pi pi-envelope" icon-pos="right"></Button>
         </div>
       </div>
