@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import HeroLanding from '@/components/HeroLanding.vue'
+import AboutView from './AboutView.vue'
+import FaqView from './FaqView.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <HeroLanding />
+    <AboutView />
+    <FaqView />
   </main>
 </template>
+
+<style scoped></style>
