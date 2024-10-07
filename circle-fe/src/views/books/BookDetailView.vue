@@ -44,7 +44,12 @@
         </div>
         <div class="flex w-full flex-col items-center gap-5 md:w-1/3">
           <img src="https://placehold.co/1000x1200" alt="" />
-          <Button label="Purchase" icon="pi pi-shopping-cart" class="w-full" />
+          <Button
+            label="Purchase"
+            icon="pi pi-shopping-cart"
+            class="w-full"
+            @click="submitPurchase"
+          />
         </div>
       </div>
     </div>
@@ -76,13 +81,15 @@
 </template>
 
 <script setup lang="ts">
-import { getBookById } from '@/repository/books'
+import { getBookById, purchaseBook } from '@/repository/books'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import Button from 'primevue/button'
 import Skeleton from 'primevue/skeleton'
 import read_book from '@/assets/images/read_book.svg'
+import { useToast } from 'primevue/usetoast'
 
+const toast = useToast()
 const route = useRoute()
 const id = route.params.id as string
 
@@ -91,6 +98,18 @@ let book = ref<Book>()
 const getData = async () => {
   const res = await getBookById(id)
   book.value = res.book
+}
+
+const submitPurchase = async () => {
+  try {
+    const res = await purchaseBook(id)
+    console.log(res)
+    toast.add({ severity: 'success', summary: 'Success', detail: res.message, life: 3000 })
+  } catch (error: any) {
+    toast.add({ severity: 'error', summary: 'Error', detail: error.message, life: 3000 })
+  } finally {
+    getData()
+  }
 }
 
 onMounted(() => {

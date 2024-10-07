@@ -8,6 +8,7 @@ import PrimeVue from 'primevue/config'
 import Aura from '@/presets/aura'
 // @ts-ignore
 import Lara from '@/presets/lara'
+import ToastService from 'primevue/toastservice'
 
 import App from './App.vue'
 import router from './router'
@@ -19,6 +20,8 @@ app.use(PrimeVue, {
   pt: Aura,
   dark: false
 });
+
+app.use(ToastService)
 
 app.use(createPinia())
 app.use(router)
