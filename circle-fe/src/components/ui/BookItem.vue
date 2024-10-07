@@ -36,19 +36,22 @@
     <template #title>{{ props.book.title }}</template>
     <template #subtitle>{{ props.book.author }}</template>
     <template #content>
-      <p>${{ props.book.price }}</p>
+      <div class="mt-5 flex flex-row items-center justify-between">
+        <!-- <Badge :value="`$ ${props.book.price}`" size="large" severity="success"></Badge> -->
+        <p class="font-bold">$ {{ props.book.price }}</p>
+        <p class="text-xs">{{ props.book.availableStock }} item(s) left</p>
+      </div>
     </template>
     <template #footer>
-      <div class="mt-auto flex gap-4">
+      <!-- <div class="mt-auto flex gap-4">
         <Button label="+ Add To Cart" class="mt-auto w-full" />
-      </div>
+      </div> -->
     </template>
   </Card>
 </template>
 
 <script setup lang="ts">
 import Card from 'primevue/card'
-import Button from 'primevue/button'
 import { useRouter } from 'vue-router'
 // define props here
 const props = defineProps<{

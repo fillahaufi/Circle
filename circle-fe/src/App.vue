@@ -4,7 +4,7 @@
     <div class="container mx-auto">
       <RouterView />
     </div>
-    <FloatingCart />
+    <!-- <FloatingCart /> -->
     <FooterView />
   </div>
 </template>

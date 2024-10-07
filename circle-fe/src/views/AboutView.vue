@@ -1,5 +1,5 @@
 <template>
-  <div id="about" class="mx-break-out relative bg-primary-200">
+  <div id="about" class="mx-break-out relative bg-primary-200 px-3">
     <div class="container mx-auto py-40">
       <div class="mb-40">
         <h2 class="text-center text-4xl font-bold">About Us</h2>
@@ -12,13 +12,16 @@
         <h4 class="mb-8 text-center text-3xl font-bold">
           Our Community is Growing Fast 🚀 with more than
         </h4>
-        <div class="flex flex-row items-center justify-center gap-5">
+        <div class="flex flex-col items-center justify-center gap-5 md:flex-row">
           <div v-for="(s, i) in stats" :key="i" class="flex flex-row gap-5">
             <div class="flex flex-col items-center gap-2">
               <h2 class="text-4xl font-bold">{{ s.count }} +</h2>
               <p>{{ s.title }}</p>
             </div>
-            <div v-if="i !== stats.length - 1" class="h-20 border-r-2 border-primary-100"></div>
+            <div
+              v-if="i !== stats.length - 1"
+              class="hidden h-20 border-r-2 border-primary-100 md:flex"
+            ></div>
           </div>
         </div>
         <p class="mt-5 text-center">
@@ -27,11 +30,11 @@
       </div>
       <div>
         <h2 class="mt-40 text-center text-4xl font-bold">What our users think about us</h2>
-        <div class="mt-10 flex flex-row items-center justify-center gap-5">
+        <div class="mt-10 flex flex-col items-center justify-center gap-5 md:flex-row">
           <div
             v-for="(r, i) in reviews"
             :key="i"
-            class="relative flex w-1/2 flex-col gap-5 rounded-lg bg-primary-950 p-5 text-primary-100"
+            class="relative flex w-full flex-col gap-5 rounded-lg bg-primary-950 p-5 text-primary-100 md:w-1/2"
           >
             <p class="absolute -left-4 -top-6 text-8xl font-bold text-primary-500">"</p>
             <p>{{ r.review }}</p>

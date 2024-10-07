@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex h-[calc(100vh_-_64px)] flex-row items-center justify-between">
+  <div class="relative flex h-[calc(100vh_-_64px)] flex-row items-center justify-between px-3">
     <div class="flex flex-col gap-3">
       <h1 class="text-5xl font-bold">Welcome to Circle</h1>
       <p>
@@ -11,7 +11,7 @@
         <Button label="FAQ" outlined="" icon="pi pi-question" icon-pos="right"></Button>
       </div>
     </div>
-    <img :src="hero_books" alt="book" class="hidden md:block" />
+    <img :src="hero_books" alt="book" class="hidden lg:block" />
     <div class="custom-shape-divider-bottom-1728195527 mx-break-out">
       <svg
         data-name="Layer 1"

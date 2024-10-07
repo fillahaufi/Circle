@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col justify-center py-20">
+  <div class="flex flex-col justify-center px-3 py-20">
     <h4 class="text-center text-4xl font-bold">FAQ</h4>
-    <div class="mt-10 w-1/3 self-center">
+    <div class="mt-10 w-full self-center lg:w-1/3">
       <Accordion value="0">
         <AccordionPanel v-for="tab in tabs" :key="tab.title" :value="tab.content">
           <AccordionHeader>{{ tab.title }}</AccordionHeader>

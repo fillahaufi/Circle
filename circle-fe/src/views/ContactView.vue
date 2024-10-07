@@ -1,5 +1,5 @@
 <template>
-  <div class="py-28">
+  <div class="px-3 py-28">
     <div class="container mx-auto">
       <h1 class="text-3xl font-bold">Contact</h1>
       <p class="text-lg">Contact us for any inquiries or feedback.</p>
@@ -8,7 +8,7 @@
         <Button icon="pi pi-instagram" rounded aria-label="Filter" />
         <Button icon="pi pi-twitter" rounded aria-label="Filter" />
       </div>
-      <div class="grid grid-cols-2">
+      <div class="grid grid-cols-1 md:grid-cols-2">
         <form action="" method="post">
           <div class="mt-8 flex flex-col gap-4">
             <div class="flex flex-col gap-2">
@@ -26,7 +26,7 @@
             <Button label="Submit" class="btn btn-primary mt-10 w-full" />
           </div>
         </form>
-        <div>
+        <div class="hidden md:block">
           <img :src="contact_us" alt="contact" />
         </div>
       </div>
